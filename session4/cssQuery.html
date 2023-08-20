@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names">
+      <li>John</li>
+      <li>Mary</li>
+      <li>Dora</li>
+      <li>Donny</li>
+    </ul>
+    <script>
+      searchPerson(elemId, name){
+        const nodeList = document.querySelectorAll(`#${elemId} li`);
+        const listArr = Array.from(nodeList);
+        // listArr.forEach(element => {
+        //   if (element.textContent === name)
+        //   return true;
+        //   return false;
+        // });
+        if(listArr.find((item) => item.textContent === name) === undefined)
+        {
+          return false;
+        } return true;
+      }
+      if(searchPerson(elemId, name)){
+        console.log("Found");
+      }
+      else{
+        console.log("Not Found");
+      }
+      searchPerson(names, John);
+    </script>
+  </body>
+</html>

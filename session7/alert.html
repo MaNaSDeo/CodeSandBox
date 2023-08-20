@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="manas">Click me alert</h1>
+    <button onclick="alertUser()">Click me</button>
+    <button id="clickThem">Click Them</button>
+    <script>
+      const alertUser = () => alert("Clicked");
+      const changeText = () =>
+        (document.querySelector("#manas").textContent =
+          "Keep the mouse away, Now reload the page.");
+      document.querySelector("#clickThem").addEventListener("click", alertUser);
+      document
+        .querySelector("#manas")
+        .addEventListener("mouseover", changeText);
+    </script>
+  </body>
+</html>

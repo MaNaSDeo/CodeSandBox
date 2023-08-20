@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="justiceLeauge">
+      <li>Batman</li>
+      <li>Superman</li>
+    </ul>
+    <div id="logo"></div>
+    <button onclick="addWonderWoman()">Add Wonder Woman</button>
+    <script>
+      const addWonderWoman = () => {
+        // const characters = document.querySelector("#justiceLeauge");
+        // characters.innerHTML += "<li>Wonder Woman</li>"; //Security concern -> someone can pass script as well here.
+        // const leaugeName = document.createElement("h1");
+        // leaugeName.textContent = "The original Trio of Justice Leauge";
+        // characters.append(leaugeName);
+        // const existingDOMNode = document.querySelector("#logo");
+        // const newElement = document.createElement("img");
+        // newElement.innerHTML =
+        //   "https://1000logos.net/wp-content/uploads/2021/03/Justice-League-Logo-2017.png";
+        // existingDOMNode.append(newElement);
+        // console.log(existingDOMNode);
+        const existingDOMNode = document.querySelector("#logo");
+        const newElement = document.createElement("p");
+        newElement.textContent = "Adding a button";
+        existingDOMNode.append(newElement);
+      };
+    </script>
+  </body>
+</html>

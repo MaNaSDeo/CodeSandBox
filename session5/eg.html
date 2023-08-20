@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Hello!</p>
+    <script>
+      function showAlertAfterDelay(ms) {
+        setTimeout(() => {
+          alert("You should log in!");
+        }, 1000);
+      }
+      showAlertAfterDelay(5000);
+      console.log("Greetings Start"); // 1
+
+      function showGreeting(name) {
+        console.log("Hello " + name + "!"); // 2
+      }
+
+      console.log("Greeting Rohan"); // 3
+      setTimeout(() => showGreeting("Rohan"), 5000);
+
+      console.log("Greetings End"); // 4
+    </script>
+  </body>
+</html>

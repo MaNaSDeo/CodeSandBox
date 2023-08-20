@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="para" id="mypara">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ullam
+      neque qui dolores <span>officia repellendus animi,</span> alias maiores
+      aspernatur hic voluptate quisquam quod, corrupti molestias blanditiis sit
+      atque architecto provident.
+    </p>
+    <p class="para" id="yourpara">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque odit,
+      repellendus corporis architecto quaerat expedita totam quidem, quod ullam
+      voluptas voluptatibus cumque consectetur consequuntur! Ducimus sed dolores
+      ex quod excepturi.
+    </p>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    <script>
+      // const myPara = document.querySelector(".para").textContent;
+      // console.log(myPara);
+      // const paras = document.querySelectorAll(".para"); //Node List
+      // console.log(paras);
+      // const parasArr = Array.from(paras);
+      // console.log(parasArr);
+      const submitButton = document.querySelector("button[type='submit']");
+      submitButton.textContent = "Manas";
+      console.log(document.querySelector("#mypara span").textContent);
+    </script>
+  </body>
+</html>

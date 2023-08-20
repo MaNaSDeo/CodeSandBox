@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <h2 id="number">0</h2>
+    <button id="incrementBtn">+</button>
+    <button id="decrementBtn">-</button>
+    <script>
+      //Selecting the id, where change need to happen.
+      let countElement = document.querySelector("#number");
+
+      const handleCountChange = (eventThatClicked) => {
+        if (eventThatClicked.target.id === "incrementBtn")
+          countElement.textContent = parseInt(countElement.textContent) + 1;
+        if (eventThatClicked.target.id === "decrementBtn")
+          countElement.textContent = parseInt(countElement.textContent) - 1;
+      };
+
+      const incrementBtn = document.querySelector("#incrementBtn");
+      const decrementBtn = document.querySelector("#decrementBtn");
+
+      //Adding EventListener
+      incrementBtn.addEventListener("click", handleCountChange);
+      decrementBtn.addEventListener("click", handleCountChange);
+    </script>
+  </body>
+</html>

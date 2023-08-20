@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading" id="first">1st Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <h1 class="heading" id="second">2nd Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <h1 class="heading" id="third">3rd Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <script>
+      const firstPara = document.getElementById("first").textContent;
+      console.log(firstPara);
+      const headingClass = document.getElementsByClassName("heading");
+      console.log(headingClass);
+      const paraTag = document.getElementsByTagName("para");
+      console.log(paraTag);
+    </script>
+  </body>
+</html>

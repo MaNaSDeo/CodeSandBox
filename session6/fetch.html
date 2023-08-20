@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>fetch api and promises</h1>
+    <!-- <script>
+      const response = fetch("https://jsonplaceholder.typicode.com/posts");
+      // response.then((res) => console.log(res));
+      response.then((res) => {
+        const json = res.json();
+        json.then((data) => console.log(data));
+      });
+      // console.log(response);
+
+      // const add = (x, y) => {
+      //   return x + y;
+      // };
+      // console.log(add(5, 15));
+
+      async function asyncAdd(x, y) {
+        return x + y;
+      }
+      asyncAdd(5, 15).then((abcdef) => console.log(abcdef));
+      // console.log(asyncAdd(5, 15));
+    </script> -->
+    <script>
+      const response = fetch("https://jsonplaceholder.typicode.com/posts");
+      // response.then((result) => console.log(result)); //This console an object of response class. watch after 37 minutes in recording.
+      response.then((result) => {
+        const jsonResult = result.json();
+        jsonResult.then((data) => console.log(data));
+      }); //Watch at 48min
+      // const add = (x, y) => {
+      //   return x + y;
+      // };
+      // console.log(add(7, 8));
+
+      // async function asyncAdd(x, y) {
+      //   return x + y;
+      // }
+      // asyncAdd(7, 8).then((result) => console.log(result));
+      // console.log(asyncAdd(7, 8));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <h2 id="number">0</h2>
+    <button onclick="increase()">+</button>
+    <button onclick="decrease()">-</button>
+    <script>
+      let countElement = document.querySelector("#number");
+      const increase = () => {
+        countElement.textContent = parseInt(countElement.textContent) + 1;
+      };
+      const decrease = () => {
+        countElement.textContent = parseInt(countElement.textContent) - 1;
+      };
+    </script>
+  </body>
+</html>

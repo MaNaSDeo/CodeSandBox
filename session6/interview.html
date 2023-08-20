@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      console.log("start");
+      async function greet() {
+        console.log("hello");
+      }
+      greet();
+      // asynchronous function behave like a synchronous function till the 
+      // time JS engine hits await keyword.
+      console.log("end");
+    </script> -->
+    <script>
+      console.log("start"); //1
+      async function greet() {
+        console.log("inside the function"); //2
+        const response = await fetch("https://api.kanye.rest/");
+        const json = await response.json();
+        console.log(json.quote); //3
+      }
+      greet();
+      console.log("end"); //4
+
+      // 1st "1" will be excuted
+      // now greet() will be called,
+      // the function will start getting excuted, and will reach "2", and will be print.
+      // When the js engine will reach the next line after "2", it will find "await", so will add it to queue.
+      // So "4" will be print.
+      // And as the whole code is completed, it will move to the queue, and will print "3".
+    </script>
+  </body>
+</html>

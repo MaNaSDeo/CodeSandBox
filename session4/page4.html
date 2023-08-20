@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="firstOne">Selectors in JS</h1>
+    <p class="firstOne">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse totam
+      reiciendis cumque! Molestiae illo delectus eaque explicabo obcaecati minus
+      quasi velit quos excepturi quia quam pariatur alias eius, beatae aliquam.
+    </p>
+    <h1 class="secondOne" id="thisOne">2nd Para</h1>
+    <p class="secondOne">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ea quas
+      consequuntur hic repellendus velit harum, magnam modi placeat possimus
+      voluptates, expedita optio quae autem obcaecati voluptatum animi
+      laboriosam quis.
+    </p>
+    <script>
+      // console.log(document.getElementsByTagName("h1"));
+      // const headingElements = document.getElementsByTagName("h1");
+      // headingElements[0].textContent = "Tag, Class and id selectors";
+      // console.log(document.getElementsByClassName("firstOne"));
+      const classElements = document.getElementsByClassName("firstOne");
+      classElements[0].textContent = "Tag, Class and id selectors";
+      const thisElement = document.getElementById("thisOne");
+      console.log(thisElement);
+      thisElement.textContent = "Changed using ID selector";
+    </script>
+  </body>
+</html>

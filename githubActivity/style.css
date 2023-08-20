@@ -1,0 +1,16 @@
+.card {
+  width: 40%;
+  padding: 0.8rem;
+  border: 2px solid black;
+  background-color: #acadac;
+  border-radius: 2%;
+}
+.card img {
+  border-radius: 2%;
+  width: 100%;
+}
+.gitDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

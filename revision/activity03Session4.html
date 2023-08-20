@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading" id="first">1st Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <h1 class="heading" id="second">2nd Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <h1 class="heading" id="third">3rd Para</h1>
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquid
+      ducimus dolorem pariatur assumenda enim reiciendis in. Ut omnis vel
+      dignissimos. Facilis, magnam? Quisquam animi sapiente ab ullam explicabo
+      hic!
+    </p>
+    <script>
+      // const firstPara = document.getElementById("first").textContent;
+      // console.log(firstPara);
+
+      const headingClass = document.getElementsByClassName("heading");
+      const headingArray = Array.from(headingClass);
+      // console.log(headingArray);
+      headingArray[0].textContent = "Edited from Script Tag!";
+
+      const paraTag = document.getElementsByTagName("p");
+      console.log(paraTag);
+      const paraArray = Array.from(paraTag);
+      paraArray[1].innerHTML =
+        "<img src='https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png' alt = 'Google Image'>";
+      // console.log(paraArray[1].textContent);
+      // paraArray[1].textContent = "Hello there!";
+      // paraArray[1].innerHTML = "<p>Hello Hello Hello</p>";
+    </script>
+  </body>
+</html>

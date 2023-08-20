@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Events</title>
+  </head>
+
+  <body>
+    <!-- <script>
+      //1. Select the "heading" element and print its text content.
+      const headingElement = document.querySelector("#heading");
+      console.log(headingElement.textContent);
+    </script> -->
+    <script>
+      //2. Attach an event listener to Document
+      //and print the heading's text content when DOM loaded
+      // ________.addEventListener("________________", () => {
+      // < copy paste code here from 1. >
+      // });
+      document.addEventListener("DOMContentLoaded", () => {
+        const headingElement = document.querySelector("#heading");
+        console.log(headingElement.textContent);
+      });
+    </script>
+    <h1 id="heading">Counter</h1>
+  </body>
+</html>

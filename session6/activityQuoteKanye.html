@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Once Kanye Said</h1>
+      <p id="addQuoteHere"></p>
+    </div>
+    <script>
+      const existingDOMNode = document.querySelector("#addQuoteHere");
+
+      // This funcion is to get the quote form the web API
+      const fetchQuote = () => {
+        return fetch("https://api.kanye.rest/").then((data) => data.json());
+      };
+
+      // This function is add quote to he the "p block"
+      const addQuoteToDOM = (quote) => {
+        existingDOMNode.textContent = quote;
+      };
+
+      // This function is to call both the function to get the complete output.
+      const quoteKanye = () => {
+        fetchQuote().then((finalQuote) => {
+          addQuoteToDOM(finalQuote.quote);
+        });
+      };
+
+      // Calling the function.
+      quoteKanye();
+    </script>
+  </body>
+</html>

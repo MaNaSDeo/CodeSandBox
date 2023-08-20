@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const response = fetch(
+      //   "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+      // );
+      // response
+      //   .then((result) => {
+      //     // console.log(result);
+      //     return result.json();
+      //   })
+      //   .then((jsonResult) => {
+      //     console.log(jsonResult);
+      //     return jsonResult;
+      //   });
+
+      async function fetchAPI() {
+        const promise = await fetch(
+          "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo"
+        );
+        const response = await promise.json();
+        const result = response["Time Series (Daily)"]["2023-03-23"]["1. open"];
+        console.log(result);
+        // return result;
+      }
+      fetchAPI();
+      // (async () => {
+      //   const finalObject = await fetchAPI();
+      //   const finalArray = Object.keys(finalObject); // Get an array of keys (dates)
+      //   console.log(finalArray.length); // This will give you the number of dates in the "finalObject"
+      //   // const resultArray = [];
+      //   // for (let i = 0; i < finalArray.length; i++) {
+      //   //   resultArray.push(finalArray[i]["1. open"]);
+      //   // }
+      //   // console.log(resultArray);
+      // })();
+    </script>
+  </body>
+</html>

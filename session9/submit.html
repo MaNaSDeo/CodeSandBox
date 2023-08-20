@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Book a session</title>
+  </head>
+
+  <body>
+    <main class="p-4">
+      <h1>Book a session</h1>
+      <p>Fill in the form below to book a virtual session with your doctor</p>
+
+      <form id="booking-form">
+        <h5>Basic Info</h5>
+
+        <!-- Activity 1 Below -->
+        <div>
+          <!-- label and input for Full Name -->
+          <label for="fullName" class="form-label">Full Name</label><br />
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter Full Name"
+            class="form-control"
+          />
+        </div>
+        <div class="mt-2">
+          <!-- label and input for Email -->
+          <label for="email" class="form-label">Your Email</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email address"
+            class="form-control"
+          />
+        </div>
+
+        <div class="mt-4">
+          <h5>Doctor</h5>
+          <!-- Activity 2 Below -->
+          <select name="doctor" id="doctor" class="form-select">
+            <option value="" selected>Select your doctor</option>
+            <option value="JOHN_HOPKINS">Dr. John Hopkins</option>
+            <option value="MAYA_MARIN">Dr. Maya Marin</option>
+            <option value="DONNA_DOUGLAS">Dr. Donna Douglas</option>
+          </select>
+        </div>
+
+        <div class="mt-4" id="radio-btn">
+          <h5>Where?</h5>
+          <!-- Activity 3 Below -->
+          <input
+            type="radio"
+            name="location"
+            id="googleMeet"
+            value="GOOGLE_MEET"
+            class="form-check-input"
+          />
+          <label for="googleMeet" class="form-check-label">Google Meet</label>
+          <br />
+          <input
+            type="radio"
+            name="location"
+            id="phone"
+            value="PHONE"
+            class="form-check-input"
+          />
+          <label for="phone" class="form-check-label">Phone</label>
+        </div>
+
+        <h5 class="mt-4">When?</h5>
+        <!-- Activity 4 Below -->
+        <input
+          type="datetime-local"
+          name="date"
+          id="date"
+          class="form-control"
+        />
+        <!-- Activity 5 Below -->
+        <div class="mt-2">
+          <button type="submit" class="btn btn-primary" disabled>
+            Confirm Booking
+          </button>
+        </div>
+      </form>
+    </main>
+    <!-- //@ = %40 -> URI Encoding -->"
+    <script>
+      const bookingForm = document.querySelector("#booking-form");
+      const submitBtn = document.querySelector("button[type='submit']");
+
+      bookingForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        // const fullName = document.querySelector("#fullName").value;
+        // //.value gives us the value that has been entered in the input tag.
+        // console.log(fullName);
+        // console.log(bookingForm);
+        // console.log(bookingForm.elements);
+
+        const {
+          fullName,
+          email,
+          doctor,
+          location,
+          date
+        } = bookingForm.elements;
+
+        const formData = {
+          full_Name: fullName.value,
+          email_address: email.value,
+          doctor: doctor.value,
+          location: location.value,
+          date: date.value
+        };
+        console.log(formData);
+
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+          }
+        );
+
+        const json = await response.json();
+        console.log(json);
+
+        localStorage.removeItem("formData");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      });
+
+      bookingForm.addEventListener("input", (event) => {
+        event.preventDefault();
+        const {
+          fullName,
+          email,
+          doctor,
+          location,
+          date
+        } = bookingForm.elements;
+
+        const formData = {
+          full_Name: fullName.value,
+          email_address: email.value,
+          doctor: doctor.value,
+          location: location.value,
+          date: date.value
+        };
+
+        localStorage.setItem("formData", JSON.stringify(formData));
+
+        if (Object.values(formData).includes("")) {
+          submitBtn.disabled = true;
+        } else {
+          submitBtn.disabled = false;
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const formData = JSON.parse(localStorage.getItem("formData"));
+        if (formData) {
+          if (Object.values(formData).includes("")) {
+            submitBtn.disabled = true;
+          } else {
+            submitBtn.disabled = false;
+          }
+
+          const { full_Name, email_address, doctor, location, date } = formData;
+          bookingForm.elements["fullName"].value = full_Name;
+          bookingForm.elements["email"].value = email_address;
+          bookingForm.elements["location"].value = location;
+          bookingForm.elements["date"].value = date;
+          bookingForm.elements["doctor"].value = doctor;
+        }
+      });
+    </script>
+  </body>
+</html>

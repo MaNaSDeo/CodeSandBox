@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Kanye Quote</h1>
+    <p id="kanyeQuote"></p>
+    <script>
+      const quoteContainer = document.querySelector("#kanyeQuote");
+
+      // const showQuote = () => {
+      //   const response = fetch("https://api.kanye.rest/");
+      //   response.then((result) => {
+      //     const jsonResult = result.json();
+      //     jsonResult.then((kayneQuote) => {
+      //       quoteContainer.textContent = kayneQuote.quote;
+      //     });
+      //   });
+      // };
+      // By chaning method
+      const showQuote = () => {
+        const response = fetch("https://api.kanye.rest/");
+        response
+          .then((result) => {
+            return result.json();
+          })
+          .then((kayneQuote) => {
+            quoteContainer.textContent = kayneQuote.quote;
+          });
+      };
+      showQuote();
+      // Promise object has ‘then’ and ‘catch’ method which are used to register
+      // callback for success and failure scenario respectively.
+
+      // res.then((result) => {
+      //   const jsonQuote = result.json();
+      //   // console.log(jsonQuote);
+      //   jsonQuote.then((output) => {
+      //     // console.log(output.quote)
+      //     const finalQuote = output.quote;
+      //     result finalQuote;
+      //   });
+      // });
+      // const finalQuote = () => {
+      //   return res.then((result) => {
+      //     const quoteInFormOfJSON = result.json();
+      //     quoteInFormOfJSON.then((outputData) => {
+      //       const finalResult = outputData.quote;
+      //       // return finalResult;
+      //     });
+      //   });
+      // };
+      // console.log(finalQuote().then());
+      //{quote: "Culture is the most powerful force in humanity under God"}
+      // quote = finalQuote();
+      // const existingDOMNode = document.querySelector("#kanyeQuote");
+      // const newElement = document.createElement("h3");
+      // newElement.textContent = quote;
+      // existingDOMNode.append(newElement);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      let promise = fetch("https://isro.vercel.app/api/spacecrafts");
+      promise
+        .then((response) => {
+          console.log(response);
+          return response.json();
+        })
+        .then((result) => {
+          console.log(result.spacecrafts);
+        });
+    </script> -->
+    <script>
+      async function isro() {
+        const promise = await fetch("https://isro.vercel.app/api/spacecrafts");
+        const response = await promise.json();
+        console.log(response.spacecrafts[1].name);
+      }
+      isro();
+    </script>
+  </body>
+</html>

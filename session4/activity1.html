@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names">
+      <li>John</li>
+      <li>Mary</li>
+      <li>Dora</li>
+      <li>Donny</li>
+    </ul>
+    <script>
+      function searchPerson(elemId, name) {
+        const listElement = document.getElementById("names");
+        const listElements = listElement.getElementsByTagName("li");
+        const listArr = Array.from(listElements);
+        // console.log(listArr);
+        if (
+          listArr.find(
+            (item) => item.textContent.toLowerCase() === name.toLowerCase()
+          ) === undefined
+        ) {
+          return false;
+        }
+        return true;
+      }
+      // if (searchPerson("names", "John")) console.log("Found");
+      // else console.log("Not FOund");
+      // Terniry Opertor.
+      searchPerson("names", "ohn")
+        ? console.log("Found")
+        : console.log("Not FOund");
+    </script>
+  </body>
+</html>

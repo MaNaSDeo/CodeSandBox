@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="names">
+      <li>John</li>
+      <li>Mary</li>
+      <li>Dora</li>
+      <li>Donny</li>
+    </ul>
+    <script>
+      const searchPerson = (elemId, name) => {
+        const domElements = document.querySelectorAll(`#${elemId} li`);
+        const elementsArray = Array.from(domElements);
+        // if (
+        //   elementsArray.find((element) => element.textContent === name) ===
+        //   undefined
+        // ) {
+        //   return false;
+        // } else {
+        //   return true;
+        // }
+        return elementsArray.find(
+          (element) => element.textContent.toLowerCase() === name.toLowerCase()
+        );
+      };
+      const nameExist = searchPerson("names", "DoNny");
+
+      if (nameExist) {
+        console.log("Found");
+      } else {
+        console.log("Not FOund");
+      }
+      // console.log("adsjga gj");
+      // searchPerson(names, John);
+    </script>
+  </body>
+</html>
